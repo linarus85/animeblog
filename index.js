@@ -34,7 +34,7 @@ async function start() {
                 process.env.MONGODB_URI)
             .then(() => console.log('DB ok'))
             .catch((err) => console.log('DB error', err));
-        app.listen(PORT, () => console.log(`Server started on port: ${PORT}`))
+        app.listen(process.env.PORT || 3001, () => console.log(`Server started on port: ${PORT}`))
     } catch (error) {
         console.log(error)
     }
